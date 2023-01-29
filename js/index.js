@@ -44,7 +44,7 @@ function fiveDayForcast(response) {
     // add date, icon and other data to the day
     let date = $("<p>")
       .text(
-        moment(forecast[1].dt_txt, "YYYY-MM-DD hh:mm:ss").format("DD/MM/YYYY")
+        moment(forecast[i].dt_txt, "YYYY-MM-DD hh:mm:ss").format("DD/MM/YYYY")
       )
       .append(icon)
       .append(getData(forecast[i]));
