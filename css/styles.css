@@ -6,11 +6,19 @@
 .container{
     display: flex;
     color: var(--forecast-text);
+    flex-wrap: wrap;
     }
 
 .forecastDay{
-  padding: 20px;
   background-color: var(--forecast-background);
-  margin: 10px;
+}
 
+.todayContainer {
+  background-color: var(--today-background);
+}
+
+.forecastDay, .todayContainer {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
 }

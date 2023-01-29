@@ -35,21 +35,24 @@ function getForcast(myURL) {
 function fiveDayForcast(response) {
   let container = $("#forecast");
   container.empty();
-  console.log(response);
   forecast = response.list;
-  console.log(forecast);
   let days = $("<div>").addClass("container");
   for (let i = 6; i < forecast.length; i += 8) {
+    // create div with class forecastDay to apply background color and margins
     let day = $("<div>").addClass("forecastDay");
-    
+    let icon = getIcon(forecast[i]);
+    // add date, icon and other data to the day
     let date = $("<p>")
       .text(
         moment(forecast[1].dt_txt, "YYYY-MM-DD hh:mm:ss").format("DD/MM/YYYY")
       )
+      .append(icon)
       .append(getData(forecast[i]));
+    // place all the data in div
     day.append(date);
-    console.log(getData(forecast[i]));
+    // place div to the container
     days.append(day);
+    // place container div to the page
     container.append(days);
   }
 }
@@ -57,11 +60,16 @@ function fiveDayForcast(response) {
 function todayForcast(response) {
   container = $("#today");
   container.empty();
-  getIcon(response);
+  // create div
   today = $("<div>")
+    //  put name of the city and current date in it
     .text(response.name + " " + moment().format("(DD/MM/YYYY)"))
-    .append(icon);
-  container.append(today).append(getData(response));
+    // add icon
+    .append(getIcon(response))
+    // add forecast data
+    .append(getData(response)).addClass("todayContainer");
+  // put everything on the page
+  container.append(today);
 }
 
 function getData(response) {
