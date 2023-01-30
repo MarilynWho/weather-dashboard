@@ -1,8 +1,12 @@
 $("#search-button").click(function (event) {
   event.preventDefault();
+  let city = $("#search-input").val();
+  renderWeather(city);
+});
+
+function renderWeather(city) {
   let weatherAPI = localStorage.weatherAppAPI;
   // let weatherAPI = prompt("Enter your API key");
-  let city = $("#search-input").val();
   let todayURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
@@ -16,7 +20,7 @@ $("#search-button").click(function (event) {
   getForcast(todayURL);
   getForcast(fiveDaysURL);
   addBtn(city);
-});
+}
 
 // Send URL
 
@@ -98,6 +102,13 @@ function addBtn(name) {
   let newBtn = $("<button>")
     .attr("data-city", name)
     .addClass("historyBtn")
-    .text(name.charAt(0).toUpperCase() + name.slice());
+    .text(name.charAt(0).toUpperCase() + name.slice(1));
   container.prepend(newBtn);
+}
+
+$("#history").on("click", ".historyBtn", getBtnForecast);
+
+function getBtnForecast() {
+  let city = $(this).attr("data-city");
+  renderWeather(city);
 }
