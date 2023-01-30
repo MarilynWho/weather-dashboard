@@ -1,3 +1,9 @@
+let historyButtons = localStorage.buttons
+  ? JSON.parse(localStorage.buttons)
+  : [];
+historyButtons.forEach(btnName =>  addBtn(btnName));
+console.log(historyButtons);
+
 $("#search-button").click(function (event) {
   event.preventDefault();
   let city = $("#search-input").val();
@@ -19,7 +25,7 @@ function renderWeather(city) {
     weatherAPI;
   getForcast(todayURL);
   getForcast(fiveDaysURL);
-  addBtn(city);
+  addMoreButtons(city);
 }
 
 // Send URL
@@ -95,6 +101,16 @@ function getIcon(response) {
     "https://openweathermap.org/img/wn/" + iconType + ".png"
   );
   return icon;
+}
+
+function addMoreButtons (name) {
+  if (historyButtons.includes(name)) {
+    return;
+  } else {
+    addBtn(name);
+    historyButtons.push(name);
+    localStorage.buttons = JSON.stringify(historyButtons);
+  }
 }
 
 function addBtn(name) {
