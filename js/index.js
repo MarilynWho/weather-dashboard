@@ -15,6 +15,7 @@ $("#search-button").click(function (event) {
     weatherAPI;
   getForcast(todayURL);
   getForcast(fiveDaysURL);
+  addBtn(city);
 });
 
 // Send URL
@@ -67,7 +68,8 @@ function todayForcast(response) {
     // add icon
     .append(getIcon(response))
     // add forecast data
-    .append(getData(response)).addClass("todayContainer");
+    .append(getData(response))
+    .addClass("todayContainer");
   // put everything on the page
   container.append(today);
 }
@@ -89,4 +91,13 @@ function getIcon(response) {
     "https://openweathermap.org/img/wn/" + iconType + ".png"
   );
   return icon;
+}
+
+function addBtn(name) {
+  container = $("#history");
+  let newBtn = $("<button>")
+    .attr("data-city", name)
+    .addClass("historyBtn")
+    .text(name.charAt(0).toUpperCase() + name.slice());
+  container.prepend(newBtn);
 }

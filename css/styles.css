@@ -2,6 +2,7 @@
   --today-background: orange;
   --forecast-background: navy;
   --forecast-text: white;
+  --history-btn-bg: pink;
 }
 .container{
     display: flex;
@@ -17,8 +18,13 @@
   background-color: var(--today-background);
 }
 
-.forecastDay, .todayContainer {
+.forecastDay, .todayContainer, .historyBtn {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
 }
+
+.historyBtn{
+  background-color: var(--history-btn-bg);
+}
+
