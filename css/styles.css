@@ -1,8 +1,15 @@
 :root {
-  --today-background: orange;
-  --forecast-background: navy;
-  --forecast-text: white;
-  --history-btn-bg: pink;
+  --today-background: #D7DEDC;
+  --forecast-background: #545F66;
+  --forecast-text: #F7EBE8;
+  --history-btn-bg: #CFCFCD;
+  --header-color:#FF5666;
+  --header-text: #2E0014;
+}
+
+h1 {
+  background-color: var(--header-color);
+  color: var(--header-text)
 }
 .container{
     display: flex;
