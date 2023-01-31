@@ -3,6 +3,7 @@ let historyButtons = localStorage.buttons
   : [];
 historyButtons.forEach(btnName =>  addBtn(btnName));
 console.log(historyButtons);
+let weatherAPI = prompt("Enter your API key");
 
 $("#search-button").click(function (event) {
   event.preventDefault();
@@ -12,7 +13,6 @@ $("#search-button").click(function (event) {
 
 function renderWeather(city) {
   // let weatherAPI = localStorage.weatherAppAPI;
-  let weatherAPI = prompt("Enter your API key");
   let todayURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
