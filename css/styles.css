@@ -20,37 +20,18 @@
 html {
   font-size: 16px; /* it means 16px is equal to 1rem */
 }
+
 body {
   background-color: var(--bs-light);
 }
+
 html,
 body {
   min-height: 100%;
 }
-/* h1 {
-  background-color: var(--header-color);
-  color: var(--header-text)
-} */
+
 .days-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
-/* .forecastDay{
-  background-color: var(--forecast-background);
-} */
-
-/* .todayContainer {
-  background-color: var(--today-background);
-} */
-
-/* .forecastDay, .todayContainer, .historyBtn {
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-} */
-
-/* .historyBtn{
-  background-color: var(--history-btn-bg);
-} */

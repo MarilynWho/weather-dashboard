@@ -49,9 +49,7 @@ function fiveDayForcast(response) {
   forecast = response.list;
   let days = $("<div>").addClass("days-container");
   for (let i = 6; i < forecast.length; i += 8) {
-    // create div with class forecastDay to apply background color and margins
     let day = $("<div>")
-      .addClass("forecastDay")
       .addClass("p-3 border border-3 border-dark mt-3 rounded");
     let icon = getIcon(forecast[i]);
     // add date, icon and other data to the day
