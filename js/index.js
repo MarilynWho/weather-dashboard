@@ -47,10 +47,12 @@ function fiveDayForcast(response) {
   let container = $("#forecast");
   container.empty();
   forecast = response.list;
-  let days = $("<div>").addClass("container");
+  let days = $("<div>").addClass("days-container");
   for (let i = 6; i < forecast.length; i += 8) {
     // create div with class forecastDay to apply background color and margins
-    let day = $("<div>").addClass("forecastDay");
+    let day = $("<div>")
+      .addClass("forecastDay")
+      .addClass("p-3 border border-3 border-dark mt-3 rounded");
     let icon = getIcon(forecast[i]);
     // add date, icon and other data to the day
     let date = $("<p>")
@@ -99,7 +101,7 @@ function getIcon(response) {
   icon = $("<img>").attr(
     "src",
     "https://openweathermap.org/img/wn/" + iconType + ".png"
-  );
+  ).css("filter","drop-shadow(2px 4px 6px black)").addClass("m-2");
   return icon;
 }
 
@@ -117,7 +119,7 @@ function addBtn(name) {
   container = $("#history");
   let newBtn = $("<button>")
     .attr("data-city", name)
-    .addClass("historyBtn")
+    .addClass("historyBtn mt-1 btn btn-outline-primary")
     .text(name.charAt(0).toUpperCase() + name.slice(1));
   container.prepend(newBtn);
 }
@@ -128,3 +130,7 @@ function getBtnForecast() {
   let city = $(this).attr("data-city");
   renderWeather(city);
 }
+
+$(window).on("load", () => {
+  $(".historyBtn").first().click();
+})
