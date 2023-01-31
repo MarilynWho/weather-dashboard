@@ -11,8 +11,8 @@ $("#search-button").click(function (event) {
 });
 
 function renderWeather(city) {
-  let weatherAPI = localStorage.weatherAppAPI;
-  // let weatherAPI = prompt("Enter your API key");
+  // let weatherAPI = localStorage.weatherAppAPI;
+  let weatherAPI = prompt("Enter your API key");
   let todayURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
