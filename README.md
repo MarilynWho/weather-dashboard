@@ -8,7 +8,7 @@ Search history is stored in localstorage.
 
 And at the end we have web-application with search button and input. On button click city name is added to search history and weather forecast is displayed.
 
-> ![Example of the working page](./images/screenshot.jpg)
+> ![Example of the working page](./img/screenshhot.png)
 
 ## Deployment
 
@@ -16,7 +16,7 @@ The project was deployed to github pages and new version will appear each time c
 
 ## Link
 
-[Deployed web application](https://marilynwho.github.io/daily-planner/)
+[Deployed web application](https://marilynwho.github.io/weather-dashboard/)
 
 ## Credits
 
