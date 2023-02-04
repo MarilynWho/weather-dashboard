@@ -13,6 +13,7 @@ $("#search-button").click(function (event) {
 
 function renderWeather(city) {
   // let weatherAPI = localStorage.weatherAppAPI;
+  weatherAPI = "d62535d37ff79bcee3c5b7385212c60d";
   let todayURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
