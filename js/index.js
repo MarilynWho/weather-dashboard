@@ -3,7 +3,7 @@ let historyButtons = localStorage.buttons
   : [];
 historyButtons.forEach(btnName =>  addBtn(btnName));
 console.log(historyButtons);
-let weatherAPI = prompt("Enter your API key");
+// let weatherAPI = prompt("Enter your API key");
 
 $("#search-button").click(function (event) {
   event.preventDefault();
