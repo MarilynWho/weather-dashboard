@@ -16,7 +16,7 @@ The project was deployed to github pages and new version will appear each time c
 
 ## Link
 
-[Deployed web application](https://marilynwho.github.io/weather-dashboard/)
+[Deployed web application](https://marilynwho-weather-app.netlify.app/)
 
 ## Credits
 
